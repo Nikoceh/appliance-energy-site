@@ -1,0 +1,232 @@
+/* ===================================================
+   Appliance Energy Consumption — stylesheet
+   Palette pulled from the logo:
+     navy  #132A3A  (nav / dark surfaces)
+     amber #FFB627  (accent / active state)
+     cream #F7F4EE  (page background)
+     ink   #16232E  (headings/body text)
+     slate #4A5A68  (secondary text)
+   =================================================== */
+
+:root {
+  --navy: #132A3A;
+  --amber: #FFB627;
+  --cream: #F7F4EE;
+  --ink: #16232E;
+  --slate: #4A5A68;
+  --line: #DCD6C8;
+
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.55;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  margin: 0 0 0.5em 0;
+  line-height: 1.15;
+}
+
+p { max-width: 65ch; }
+
+a { color: inherit; }
+
+/* ---------- Top navigation ---------- */
+
+.topnav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--navy);
+  padding: 0.75rem 1.5rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.brand img { display: block; }
+
+.brand-name {
+  color: var(--cream);
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.nav-links {
+  display: flex;
+  gap: 0.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links button {
+  background: none;
+  border: none;
+  color: #C9D2DB;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.nav-links button:hover {
+  color: var(--cream);
+  background: rgba(255, 182, 39, 0.12);
+}
+
+.nav-links button.active {
+  color: var(--amber);
+  border-bottom: 2px solid var(--amber);
+}
+
+/* ---------- Page sections ---------- */
+
+.page {
+  display: none;
+  padding: 3rem 1.5rem 4rem;
+  max-width: 960px;
+  margin: 0 auto;
+  animation: fade-in 0.25s ease;
+}
+
+.page.active { display: block; }
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Home page ---------- */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.hero h1 { font-size: clamp(1.8rem, 3vw + 1rem, 2.6rem); }
+
+.hero .lede { color: var(--slate); font-size: 1.05rem; }
+
+.stat-card {
+  background: var(--navy);
+  color: var(--cream);
+  border-radius: 10px;
+  padding: 1.75rem;
+}
+
+.stat-card .figure {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  color: var(--amber);
+  display: block;
+}
+
+.stat-card .label { color: #C9D2DB; font-size: 0.9rem; }
+
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 2.5rem 0;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+}
+
+.card {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 1.25rem;
+  background: #FFFFFF;
+}
+
+.card .figure {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--navy);
+}
+
+/* ---------- Televisions page ---------- */
+
+table.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.data-table th, .data-table td {
+  text-align: left;
+  padding: 0.65rem 0.8rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.data-table th {
+  font-family: var(--font-display);
+  color: var(--navy);
+  font-weight: 600;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(255, 182, 39, 0.18);
+  color: #8A5C00;
+}
+
+/* ---------- About page ---------- */
+
+.about-list {
+  padding-left: 1.1rem;
+  color: var(--slate);
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--slate);
+  font-size: 0.85rem;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 720px) {
+  .topnav { flex-wrap: wrap; gap: 0.5rem; }
+  .hero { grid-template-columns: 1fr; }
+}

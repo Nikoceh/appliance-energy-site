@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Appliance Energy Consumption — Australia</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ============ NAVIGATION ============ -->
+  <nav class="topnav">
+    <button class="brand" onclick="showPage('home')" aria-label="Go to home page">
+      <img src="assets/logo.svg" width="32" height="32" alt="">
+      <span class="brand-name">WattWatch AU</span>
+    </button>
+    <ul class="nav-links">
+      <li><button data-page="home" onclick="showPage('home')">Home</button></li>
+      <li><button data-page="televisions" onclick="showPage('televisions')">Televisions</button></li>
+      <li><button data-page="about" onclick="showPage('about')">About Us</button></li>
+    </ul>
+  </nav>
+
+  <!-- ============ HOME PAGE ============ -->
+  <section id="home" class="page">
+    <div class="hero">
+      <div>
+        <h1>How much power do our appliances really use?</h1>
+        <p class="lede">
+          WattWatch AU is a small demonstration site exploring appliance energy
+          consumption in the Australian market. Placeholder figures below give
+          a sense of where household electricity actually goes.
+        </p>
+      </div>
+      <div class="stat-card">
+        <span class="figure">30%</span>
+        <span class="label">of an average Australian household's electricity bill goes to appliances and electronics (illustrative figure)</span>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>Where the data will go</h2>
+    <p class="lede">This site is the home base for data visualisations built across the unit. Placeholder cards below stand in for future charts.</p>
+    <div class="card-grid">
+      <div class="card">
+        <span class="figure">TVs</span>
+        <p>Screen size and standby draw, broken down by category.</p>
+      </div>
+      <div class="card">
+        <span class="figure">Fridges</span>
+        <p>Coming in a later task — annual kWh by star rating.</p>
+      </div>
+      <div class="card">
+        <span class="figure">Heating</span>
+        <p>Coming in a later task — seasonal usage patterns.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TELEVISIONS PAGE ============ -->
+  <section id="televisions" class="page">
+    <h1>Television energy consumption</h1>
+    <p class="lede">
+      Televisions are one of the most common entertainment appliances in
+      Australian homes. Power draw scales with screen size and panel
+      technology. Figures below are placeholder estimates for demonstration
+      purposes only.
+    </p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Screen size</th>
+          <th>Panel type</th>
+          <th>Typical active power</th>
+          <th>Standby power</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>32"</td>
+          <td>LED</td>
+          <td>40 W</td>
+          <td>0.5 W</td>
+        </tr>
+        <tr>
+          <td>55"</td>
+          <td>LED</td>
+          <td>90 W</td>
+          <td>0.5 W</td>
+        </tr>
+        <tr>
+          <td>65"</td>
+          <td>OLED</td>
+          <td>150 W</td>
+          <td>1 W</td>
+        </tr>
+        <tr>
+          <td>75"</td>
+          <td>QLED</td>
+          <td>210 W</td>
+          <td>1 W</td>
+        </tr>
+      </tbody>
+    </table>
+    <p><span class="tag">Placeholder data</span> Figures are approximate and for demonstration only — a later task will replace this table with a real interactive chart.</p>
+  </section>
+
+  <!-- ============ ABOUT US PAGE ============ -->
+  <section id="about" class="page">
+    <h1>About this project</h1>
+    <p class="lede">
+      WattWatch AU is a student project built for COS30045 Data Visualisation
+      at Swinburne University, exploring appliance energy consumption trends
+      in the Australian market through interactive, web-based visualisations.
+    </p>
+
+    <h2>What this site is for</h2>
+    <ul class="about-list">
+      <li>A refresher on HTML, CSS and JavaScript fundamentals.</li>
+      <li>Practice with GitHub commits and version control workflow.</li>
+      <li>A hosting base for visualisations built across later tasks.</li>
+    </ul>
+
+    <h2>Built by</h2>
+    <p class="lede">[Your Name Here]</p>
+
+    <h2>Generative AI acknowledgement</h2>
+    <p class="lede">
+      [State here whether you used GitHub Copilot or another GenAI tool, and
+      briefly what it helped with — e.g. scaffolding the nav script, styling
+      suggestions, etc. Full reflection notes live in README.md.]
+    </p>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <span id="year"></span> · [Your Name Here] · Built with the help of GitHub Copilot (see README.md for notes)
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
