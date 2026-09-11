@@ -40,3 +40,24 @@ window.addEventListener('hashchange', function () {
     showPage(page);
   }
 });
+
+// ===================================================
+// Chart gallery lightbox — click a thumbnail to view
+// it full size, click anywhere (or Escape) to close.
+// ===================================================
+
+function openLightbox(src, caption) {
+  const lightbox = document.getElementById('lightbox');
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox-img').alt = caption;
+  document.getElementById('lightbox-caption').textContent = caption;
+  lightbox.classList.add('open');
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+}
+
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') closeLightbox();
+});

@@ -13,7 +13,7 @@
   <!-- ============ NAVIGATION ============ -->
   <nav class="topnav">
     <button class="brand" onclick="showPage('home')" aria-label="Go to home page">
-      <img src="logo.svg" width="32" height="32" alt="">
+      <img src="assets/logo.svg" width="32" height="32" alt="">
       <span class="brand-name">WattWatch AU</span>
     </button>
     <ul class="nav-links">
@@ -106,8 +106,59 @@
         </tr>
       </tbody>
     </table>
-    <p><span class="tag">Placeholder data</span> Figures are approximate and for demonstration only — a later task will replace this table with a real interactive chart.</p>
+    <p><span class="tag">Placeholder data</span> Figures above are approximate and for illustration only.</p>
+
+    <hr class="section-divider">
+
+    <h2>Data insights (KNIME)</h2>
+    <p class="lede">
+      The charts below were generated from the Australian Government's
+      Energy Rating dataset for televisions, cleaned and transformed in
+      KNIME. Click any chart to view it full size.
+    </p>
+
+    <div class="chart-gallery">
+      <figure class="chart-card">
+        <img src="charts/bar-chart1.png" alt="Bar chart 1: television energy data" loading="lazy" onclick="openLightbox(this.src, this.alt)">
+        <figcaption>Bar chart 1 — [describe what this shows]</figcaption>
+      </figure>
+      <figure class="chart-card">
+        <img src="charts/pie-chart1.png" alt="Pie chart 1: television energy data" loading="lazy" onclick="openLightbox(this.src, this.alt)">
+        <figcaption>Pie chart 1 — [describe what this shows]</figcaption>
+      </figure>
+      <figure class="chart-card">
+        <img src="charts/bar-chart2.png" alt="Bar chart 2: television energy data" loading="lazy" onclick="openLightbox(this.src, this.alt)">
+        <figcaption>Bar chart 2 — [describe what this shows]</figcaption>
+      </figure>
+      <figure class="chart-card">
+        <img src="charts/bar-chart3.png" alt="Bar chart 3: television energy data" loading="lazy" onclick="openLightbox(this.src, this.alt)">
+        <figcaption>Bar chart 3 — [describe what this shows]</figcaption>
+      </figure>
+      <figure class="chart-card">
+        <img src="charts/bar-chart4.png" alt="Bar chart 4: television energy data" loading="lazy" onclick="openLightbox(this.src, this.alt)">
+        <figcaption>Bar chart 4 — [describe what this shows]</figcaption>
+      </figure>
+      <figure class="chart-card">
+        <img src="charts/scatter-plot5.png" alt="Scatter plot 5: television energy data" loading="lazy" onclick="openLightbox(this.src, this.alt)">
+        <figcaption>Scatter plot 5 — [describe what this shows]</figcaption>
+      </figure>
+      <figure class="chart-card">
+        <img src="charts/scatter-plot6.png" alt="Scatter plot 6: television energy data" loading="lazy" onclick="openLightbox(this.src, this.alt)">
+        <figcaption>Scatter plot 6 — [describe what this shows]</figcaption>
+      </figure>
+      <figure class="chart-card">
+        <img src="charts/box-plot7.png" alt="Box plot 7: television energy data" loading="lazy" onclick="openLightbox(this.src, this.alt)">
+        <figcaption>Box plot 7 — [describe what this shows]</figcaption>
+      </figure>
+    </div>
   </section>
+
+  <!-- ============ LIGHTBOX (shared, for chart gallery) ============ -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
+    <img id="lightbox-img" src="" alt="">
+    <p id="lightbox-caption"></p>
+  </div>
 
   <!-- ============ ABOUT US PAGE ============ -->
   <section id="about" class="page">
